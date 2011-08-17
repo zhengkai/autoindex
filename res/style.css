@@ -1,0 +1,69 @@
+* {
+	font-family: "Droid Sans Mono", monospace, "Microsoft Yahei";
+}
+
+body {
+	margin: 0;
+}
+
+img {
+	max-width: 320px;
+	vertical-align: middle;
+}
+
+a {
+	color: blue;
+	text-decoration: none;
+}
+
+a:hover {
+	background-color: #def;
+}
+
+p.error {
+	width: 320px;
+	text-align: center;
+}
+
+div.path {
+	padding: 6px 10px;
+	background-color: #def;
+}
+
+div.path:nth-of-type(1) {
+	border-bottom: 1px solid gray;
+}
+
+div.path:nth-of-type(2) {
+	border-top: 1px solid gray;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+ul a {
+	display: block;
+	padding: 6px 46px;
+	background-size: 32px 32px;
+	background-repeat: no-repeat;
+	background-position: 8px 0;
+}
+
+li:nth-of-type(2n+1) a {
+	background-color: #eee;
+}
+
+li.image a {
+	background-image: url("img/image.png");
+}
+
+li.dir a {
+	background-image: url("img/dir.png");
+}
+
+li.file a {
+	background-image: url("img/file.png");
+}
+
