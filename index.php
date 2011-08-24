@@ -18,6 +18,7 @@ if (strpos($sDir, dirfull(ROOT_DIR)) !== 0) {
 <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
 <title>File Share</title> 
 <link rel="stylesheet" href="res/style.css" type="text/css" />
+<script src="res/script.js"></script>
 </head> 
  
 <body>

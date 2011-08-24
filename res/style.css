@@ -6,6 +6,12 @@ body {
 	margin: 0;
 }
 
+body.image {
+	background-position: 0 434px;
+	background-image: url("img/line.png");
+	background-repeat: repeat-x;
+}
+
 img {
 	max-width: 320px;
 	vertical-align: middle;
@@ -14,10 +20,6 @@ img {
 a {
 	color: blue;
 	text-decoration: none;
-}
-
-a:hover {
-	background-color: #def;
 }
 
 p.error {
@@ -54,6 +56,11 @@ ul a {
 li:nth-of-type(2n+1) a {
 	background-color: #eee;
 }
+
+li a:hover {
+	background-color: #def;
+}
+
 
 li.image a {
 	background-image: url("img/image.png");
