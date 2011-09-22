@@ -74,3 +74,16 @@ li.file a {
 	background-image: url("img/file.png");
 }
 
+li a span {
+	font-size: 14px;
+	padding-left: 20px;
+	color: gray;
+}
+
+li a span:before {
+	content: "[ ";
+}
+
+li a span:after {
+	content: " ]";
+}

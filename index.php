@@ -92,6 +92,12 @@ foreach ($lFile as $sFile) {
 
 	$aRow["name"] = $sFile;
 	$aRow["fullname"] = substr($sFileFull, strlen(ROOT_DIR) + 1);
+
+	$aRow["size"] = 0;
+	if ($aRow["type"] != "dir") {
+		$aRow["size"] = filesize($sFileFull);
+	}
+
 	$lScan[] = $aRow;
 }
 
@@ -116,6 +122,21 @@ $lURLFormat = array(
 	"file" => "http://192.168.189.39/share/%s",
 );
 
+function showSize($iSize) {
+	if ($iSize <= 1) {
+		return $iSize." Byte";
+	}
+	$sFormat = "%d Bytes";
+	foreach (array("KB", "MB", "GB", "TB") as $sUnit) {
+		if ($iSize < 1000) {
+			break;
+		}
+		$iSize = $iSize / 1024;
+		$sFormat = "%.1f ".$sUnit;
+	}
+	return sprintf($sFormat, $iSize);
+}
+
 echo "<ul>\n";
 foreach ($lScan as $aRow) {
 	$sURL = $aRow["type"] == "file" 
@@ -124,6 +145,7 @@ foreach ($lScan as $aRow) {
 	$sURL = str_replace("%2F", "/", $sURL);
 	echo "<li class=\"".$aRow["type"]."\"><a href=\"".sprintf($lURLFormat[$aRow["type"]], $sURL)."\">"
 		.htmlspecialchars($aRow["name"])
+		.($aRow["size"] ? "<span>".showSize($aRow["size"])."</span>" : "")
 		."</a></li>\n";
 }
 echo "</ul>";
